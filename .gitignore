@@ -1,0 +1,7 @@
+*.mp4
+*.env
+secrets.env
+__pycache__/
+fonts/
+tmp/
+.DS_Store

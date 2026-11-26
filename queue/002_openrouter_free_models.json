@@ -1,0 +1,86 @@
+{
+  "topic": "OpenRouter :free models (20 RPM, 50 RPD at $0 vs 1,000 RPD after $10 balance)",
+  "pillar": "Teach / API Routing",
+  "hook_formula": "#3 Nobody Tells You",
+  "badge_prefix": "API TRICK",
+  "keywords": [
+    "openrouter free models",
+    "free llm api",
+    "ai tools for developers"
+  ],
+  "caption": "Save this OpenRouter setup if you're testing free LLM API models.\n\nMost devs miss the OpenRouter free models suffix (:free). You get 20 requests per minute and 50 requests daily at $0, no subscription needed.\n\nHere's the upgrade trick: once your account hits $10 in lifetime credits, your daily cap jumps to 1,000 free requests, and those free calls don't drain your $10 balance.\n\n#openrouter #aiapi #devtools",
+  "beats": [
+    {
+      "dur": 2.9,
+      "card": "50 FREE API CALLS",
+      "caption": "Nobody tells you OpenRouter hides 50 free calls.",
+      "mood": "hook"
+    },
+    {
+      "dur": 1.1,
+      "card": "LOOK FOR :FREE",
+      "caption": "Add one tag.",
+      "mood": "cool"
+    },
+    {
+      "dur": 4.0,
+      "card": "20 RPM AT $0",
+      "caption": "Any model ending in:free runs at 20 requests per minute.",
+      "mood": "rise"
+    },
+    {
+      "dur": 1.1,
+      "card": "ONE ENDPOINT ONLY",
+      "caption": "One endpoint works.",
+      "mood": "rise"
+    },
+    {
+      "dur": 4.0,
+      "card": "50 CALLS DAILY",
+      "caption": "You get 50 free calls daily with $0 spent up front.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "NEED MORE RUNS?",
+      "caption": "Need more runs?",
+      "mood": "dark"
+    },
+    {
+      "dur": 4.0,
+      "card": "1,000 RPD UNLOCK",
+      "caption": "Once you top up $10 lifetime, your daily cap hits 1,000.",
+      "mood": "hero"
+    },
+    {
+      "dur": 4.0,
+      "card": "CREDITS STAY UNTOUCHED",
+      "caption": "Free model calls don't spend one cent of that $10 credit.",
+      "mood": "hero"
+    },
+    {
+      "dur": 1.1,
+      "card": "KEEP BALANCE POSITIVE",
+      "caption": "Don't go negative.",
+      "mood": "flat"
+    },
+    {
+      "dur": 4.0,
+      "card": "429 MEANS UPSTREAM",
+      "caption": "If you hit 429, swap to another:free model inside OpenRouter.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "SKIP EXTRA KEYS",
+      "caption": "Skip extra keys.",
+      "mood": "cool"
+    },
+    {
+      "dur": 2.9,
+      "card": "SAVE THIS API TRICK",
+      "caption": "Save this before paying for 50 API keys.",
+      "mood": "loop"
+    }
+  ]
+}

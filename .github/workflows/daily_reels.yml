@@ -1,0 +1,66 @@
+name: Daily Instagram Reels (@factbaazii)
+
+on:
+  schedule:
+    - cron: '0 6 * * *'     # 11:30 AM IST
+    - cron: '30 12 * * *'   # 6:00 PM IST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Validate and render without publishing to Buffer'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  publish-reel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install FFmpeg and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core curl
+          mkdir -p fonts
+          curl -sSL -o fonts/BarlowSemiCondensed-Black.ttf https://github.com/jpt/barlow/raw/main/fonts/ttf/BarlowSemiCondensed-Black.ttf || true
+          curl -sSL -o fonts/BarlowSemiCondensed-Medium.ttf https://github.com/jpt/barlow/raw/main/fonts/ttf/BarlowSemiCondensed-Medium.ttf || true
+          curl -sSL -o fonts/BarlowSemiCondensed-SemiBold.ttf https://github.com/jpt/barlow/raw/main/fonts/ttf/BarlowSemiCondensed-SemiBold.ttf || true
+
+      - name: Set up Python & Pillow
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Pillow
+        run: pip install --no-cache-dir Pillow
+
+      - name: Run daily Reel pipeline
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python3 scripts/run_daily.py --dry-run
+          else
+            python3 scripts/run_daily.py
+          fi
+
+      - name: Commit updated queue and post log
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/log.md queue/ posted/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: log automated Instagram Reel [skip ci]"
+            git push
+          fi

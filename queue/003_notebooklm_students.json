@@ -1,0 +1,74 @@
+{
+  "topic": "Google NotebookLM Free Tier (100 notebooks, 50 sources, 500k words, flashcards, Audio Overviews)",
+  "pillar": "Alternative / Student Study",
+  "hook_formula": "#10 If This, Then Watch",
+  "badge_prefix": "STUDY AI",
+  "keywords": [
+    "notebooklm for students",
+    "free ai study tools",
+    "pdf to flashcards ai"
+  ],
+  "caption": "Save this if you're drowning in 200-page PDFs before exams.\n\nIf you want free AI study tools instead of paid PDF wrappers, Google NotebookLM for students gives 100 notebooks at $0. Each notebook holds 50 sources up to 500,000 words.\n\nYou get PDF to flashcards AI, practice quizzes, mind maps, and Audio Overviews, with a shared compute budget that resets every 5 hours.\n\n#notebooklm #aitoolsforstudents #studyhacks",
+  "beats": [
+    {
+      "dur": 2.9,
+      "card": "50 PDFS DUE?",
+      "caption": "If you've got 50 PDFs, skip paid apps.",
+      "mood": "hook"
+    },
+    {
+      "dur": 1.1,
+      "card": "USE NOTEBOOKLM FREE",
+      "caption": "Use Google NotebookLM.",
+      "mood": "rise"
+    },
+    {
+      "dur": 4.0,
+      "card": "100 NOTEBOOKS AT $0",
+      "caption": "The free plan gives you 100 separate study notebooks at $0.",
+      "mood": "rise"
+    },
+    {
+      "dur": 4.0,
+      "card": "50 SOURCES EACH",
+      "caption": "Each notebook holds 50 PDFs or links up to 500,000 words.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "ALL TOOLS FREE",
+      "caption": "It's completely free.",
+      "mood": "rise"
+    },
+    {
+      "dur": 3.6,
+      "card": "QUIZZES + FLASHCARDS",
+      "caption": "You get flashcards, practice quizzes, mind maps, and Audio Overviews.",
+      "mood": "hero"
+    },
+    {
+      "dur": 1.1,
+      "card": "CHECK THE BUDGET",
+      "caption": "Watch the meter.",
+      "mood": "flat"
+    },
+    {
+      "dur": 4.0,
+      "card": "5-HOUR REFRESH",
+      "caption": "Heavy audio runs use a shared budget resetting every 5 hours.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "CHECK SCHOOL EMAIL",
+      "caption": "Don't miss promos.",
+      "mood": "rise"
+    },
+    {
+      "dur": 2.9,
+      "card": "SAVE FOR EXAM WEEK",
+      "caption": "Save this before buying paid PDF study apps.",
+      "mood": "loop"
+    }
+  ]
+}

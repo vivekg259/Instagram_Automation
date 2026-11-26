@@ -1,0 +1,86 @@
+{
+  "topic": "Groq Free API tier (1,000 RPD, 200K TPD, 8K TPM trap)",
+  "pillar": "API/MCP Workflow",
+  "hook_formula": "#2 Negative Command",
+  "badge_prefix": "FREE API",
+  "keywords": [
+    "free ai api",
+    "groq api free tier",
+    "student developer tools"
+  ],
+  "caption": "Save this before paying $20/month for an AI coding API key.\n\nIf you're hunting for a free AI API for student developer tools, Groq's free tier gives 1,000 requests and 200,000 tokens daily on models like gpt-oss-120b and qwen3.8-27b. Whisper Turbo gets 2,000 requests daily too.\n\nWatch the 8,000 tokens-per-minute cap. Dump a whole codebase in one prompt and you'll hit a 413 error fast, so keep prompts small.\n\n#freeai #groq #codingtips",
+  "beats": [
+    {
+      "dur": 2.9,
+      "card": "STOP PAYING FOR APIS",
+      "caption": "Stop paying $20 monthly for your AI API.",
+      "mood": "hook"
+    },
+    {
+      "dur": 4.0,
+      "card": "GROQ FREE TIER",
+      "caption": "Groq gives every developer 1,000 free API requests every day.",
+      "mood": "rise"
+    },
+    {
+      "dur": 1.1,
+      "card": "NO CARD NEEDED",
+      "caption": "No card needed.",
+      "mood": "rise"
+    },
+    {
+      "dur": 4.0,
+      "card": "200K TOKENS DAILY",
+      "caption": "You get 200,000 free tokens daily on gpt-oss-120b and qwen3.8-27b.",
+      "mood": "rise"
+    },
+    {
+      "dur": 4.0,
+      "card": "WHISPER FREE: 2,000/DAY",
+      "caption": "Plus you get 2,000 daily Whisper requests inside the free tier.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "ONE REAL CATCH",
+      "caption": "One real catch.",
+      "mood": "dark"
+    },
+    {
+      "dur": 4.0,
+      "card": "8,000 TPM CEILING",
+      "caption": "Your free bucket caps every minute at 8,000 total tokens.",
+      "mood": "dark"
+    },
+    {
+      "dur": 1.1,
+      "card": "WATCH FOR 413",
+      "caption": "Watch for 413.",
+      "mood": "dark"
+    },
+    {
+      "dur": 4.0,
+      "card": "KEEP PROMPTS CHUNKED",
+      "caption": "Paste one giant file and it blocks your very first call.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "CHUNK YOUR CODE",
+      "caption": "Chunk your code.",
+      "mood": "hero"
+    },
+    {
+      "dur": 1.1,
+      "card": "KEEP IT LIGHT",
+      "caption": "Keep prompts small.",
+      "mood": "hero"
+    },
+    {
+      "dur": 2.9,
+      "card": "SAVE THIS FREE API",
+      "caption": "Save this before paying $20 for another AI API.",
+      "mood": "loop"
+    }
+  ]
+}

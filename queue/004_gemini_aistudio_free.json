@@ -1,0 +1,74 @@
+{
+  "topic": "Google AI Studio Gemini API Free Tier (per-project quota & privacy caveat)",
+  "pillar": "Opinion / Mistakes",
+  "hook_formula": "#7 Wrong Way, Right Way",
+  "badge_prefix": "GEMINI API",
+  "keywords": [
+    "gemini api free tier",
+    "google ai studio",
+    "free ai tools for developers"
+  ],
+  "caption": "Save this before making 5 Google AI Studio keys for higher limits.\n\nIf you're using the Gemini API free tier instead of paid free AI tools for developers, remember Google counts RPM, TPM, and daily calls per Cloud project, not per key. Extra keys inside one project share the exact same bucket.\n\nQuotas reset at midnight Pacific Time. Don't paste client secrets on the free tier either, since Google may review free prompts for training.\n\n#geminiapi #googleaistudio #webdev",
+  "beats": [
+    {
+      "dur": 2.9,
+      "card": "5 KEYS WON'T HELP",
+      "caption": "You're making 5 Gemini keys wrong, no fault.",
+      "mood": "hook"
+    },
+    {
+      "dur": 1.1,
+      "card": "SAME QUOTA BUCKET",
+      "caption": "They share limits.",
+      "mood": "dark"
+    },
+    {
+      "dur": 4.0,
+      "card": "PROJECT-LEVEL CAPS",
+      "caption": "Google AI Studio counts RPM, TPM, and calls per Cloud project.",
+      "mood": "cool"
+    },
+    {
+      "dur": 1.1,
+      "card": "NOT PER KEY",
+      "caption": "Never per key.",
+      "mood": "dark"
+    },
+    {
+      "dur": 4.0,
+      "card": "FLASH MODELS STAY FREE",
+      "caption": "Flash models keep free tiers, while frontier models often show 0.",
+      "mood": "rise"
+    },
+    {
+      "dur": 1.1,
+      "card": "CHECK MIDNIGHT PT",
+      "caption": "Resets midnight PT.",
+      "mood": "cool"
+    },
+    {
+      "dur": 4.0,
+      "card": "429 MEANS BURST",
+      "caption": "Getting 429 errors early means you hit 1-minute token caps.",
+      "mood": "flat"
+    },
+    {
+      "dur": 1.1,
+      "card": "ONE PRIVACY RULE",
+      "caption": "Mind your data.",
+      "mood": "dark"
+    },
+    {
+      "dur": 4.0,
+      "card": "FREE TRAINS MODELS",
+      "caption": "Google can review free prompts, so keep client secrets off it.",
+      "mood": "hero"
+    },
+    {
+      "dur": 2.9,
+      "card": "SAVE THIS GEMINI FIX",
+      "caption": "Save this before creating 5 more Gemini keys.",
+      "mood": "loop"
+    }
+  ]
+}
