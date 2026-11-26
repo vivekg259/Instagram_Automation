@@ -2,8 +2,8 @@ name: Daily Instagram Reels (@factbaazii)
 
 on:
   schedule:
-    - cron: '0 6 * * *'     # 11:30 AM IST
-    - cron: '30 12 * * *'   # 6:00 PM IST
+    - cron: '47 5 * * *'     # 11:17 AM IST
+    - cron: '17 12 * * *'    # 5:47 PM IST
   workflow_dispatch:
     inputs:
       dry_run:
