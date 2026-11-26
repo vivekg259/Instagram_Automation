@@ -92,23 +92,24 @@ def upload_to_github_release(video_path, repo, tag="reels-media"):
     return f"https://github.com/{repo}/releases/download/{tag}/{filename}"
 
 
-def publish_reel(cfg, video_url, caption, mode="shareNow", dry_run=False):
-    variables = {
-        "input": {
-            "channelId": cfg["BUFFER_CHANNEL_ID"],
-            "text": caption,
-            "schedulingType": "automatic",
-            "mode": mode,
-            "needsApproval": False,
-            "assets": [{"video": {"url": video_url}}],
-            "metadata": {
-                "instagram": {
-                    "type": "reel",
-                    "shouldShareToFeed": True,
-                }
-            },
-        }
+def publish_reel(cfg, video_url, caption, mode="shareNow", due_at=None, dry_run=False):
+    post_input = {
+        "channelId": cfg["BUFFER_CHANNEL_ID"],
+        "text": caption,
+        "schedulingType": "automatic",
+        "mode": mode,
+        "needsApproval": False,
+        "assets": [{"video": {"url": video_url}}],
+        "metadata": {
+            "instagram": {
+                "type": "reel",
+                "shouldShareToFeed": True,
+            }
+        },
     }
+    if due_at:
+        post_input["dueAt"] = due_at
+    variables = {"input": post_input}
     if dry_run:
         return {"dry_run": True, "variables": variables}
     return buffer_graphql(cfg["BUFFER_API_KEY"], CREATE_POST_MUTATION, variables)
@@ -118,7 +119,8 @@ def main():
     ap = argparse.ArgumentParser(description="Upload Reel MP4 to GitHub and publish via Buffer.")
     ap.add_argument("--video", required=True)
     ap.add_argument("--caption-file", required=True)
-    ap.add_argument("--mode", default="shareNow", choices=["shareNow", "addToQueue", "shareNext"])
+    ap.add_argument("--mode", default="shareNow", choices=["shareNow", "addToQueue", "shareNext", "customScheduled"])
+    ap.add_argument("--due-at", help="ISO-8601 UTC timestamp for customScheduled (e.g. 2026-11-26T18:31:00Z)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -131,7 +133,7 @@ def main():
         caption = fh.read().strip()
 
     video_url = upload_to_github_release(args.video, repo)
-    res = publish_reel(cfg, video_url, caption, mode=args.mode, dry_run=args.dry_run)
+    res = publish_reel(cfg, video_url, caption, mode=args.mode, due_at=args.due_at, dry_run=args.dry_run)
     print(json.dumps({"video_url": video_url, "buffer": res}, indent=2))
 
 
