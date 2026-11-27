@@ -4,4 +4,6 @@ secrets.env
 __pycache__/
 fonts/
 tmp/
+remotion/node_modules/
+remotion/out/
 .DS_Store

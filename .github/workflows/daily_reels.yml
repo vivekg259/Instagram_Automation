@@ -37,7 +37,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python packages
-        run: pip install --no-cache-dir Pillow edge-tts
+        run: pip install --no-cache-dir Pillow edge-tts numpy
 
       - name: Run daily Reel pipeline
         env:

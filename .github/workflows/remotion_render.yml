@@ -1,0 +1,41 @@
+name: Remotion Studio Cloud Render
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec_path:
+        description: 'Path to Reel JSON spec in repo (e.g. posted/001_groq_free_api.json)'
+        required: true
+        default: 'posted/001_groq_free_api.json'
+
+jobs:
+  render-remotion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: remotion/package.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python TTS + FFmpeg + Remotion deps
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install --no-cache-dir edge-tts Pillow
+          cd remotion && npm install
+
+      - name: Render studio MP4 via Remotion + Chromium Headless Shell
+        run: |
+          mkdir -p remotion/out
+          npx --prefix remotion remotion render remotion/src/index.ts FactbaaziiReel remotion/out/studio_reel.mp4 --props="${{ github.event.inputs.spec_path }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: remotion-studio-reel
+          path: remotion/out/studio_reel.mp4
