@@ -162,10 +162,12 @@ REQUIREMENTS:
 - Last beat caption MUST echo a key word from Beat 1 for a seamless loop.
 - Each beat 'card' MUST be <=5 words ALL CAPS (Beat 1 card <=4 words for grid readability).
 - 'mood' must be one of: hook, cool, dark, rise, flat, hero, loop.
+- Optional per-beat 'visual' object for B-roll/UI mockups: {"type": "terminal", "title": "...", "lines": ["$ ...", "-> ..."]}, {"type": "comparison", "left_title": "...", "left_val": "...", "right_title": "...", "right_val": "..."}, {"type": "ui_steps", "title": "...", "steps": ["..."], "active": 1}, or {"type": "metric", "value": "$0", "label": "..."}.
+- Optional 'music': one of "tech_pulse", "chill_lofi", "ambient_deep".
 - 'caption' is a Job A Instagram caption: <=125-char concrete first line with an ask ('Save this...'), short paragraphs containing all 3 search 'keywords', 3 targeted hashtags at the end, 2+ contractions, zero em dashes, zero slop words.
 {('FIX THIS FROM PREVIOUS ATTEMPT: ' + feedback) if feedback else ''}
 Return ONLY valid JSON with keys:
-topic, pillar, hook_formula, badge_prefix, keywords (3 strings), caption, beats (list of {{dur, card, caption, mood}})."""
+topic, pillar, hook_formula, badge_prefix, music, keywords (3 strings), caption, beats (list of {{dur, card, caption, mood, visual}})."""
     return call_llm(prompt)
 
 

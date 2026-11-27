@@ -36,8 +36,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Pillow
-        run: pip install --no-cache-dir Pillow
+      - name: Install Python packages
+        run: pip install --no-cache-dir Pillow edge-tts
 
       - name: Run daily Reel pipeline
         env:
